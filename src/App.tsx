@@ -5,7 +5,6 @@ import './App.css';
 import { Message } from './types';
 import { useCookie } from "@use-hook/use-cookie";
 
-
 let data: Array<Message> = [
   {userName: 'dan', id: '2HUoNcA8owoomGuUyaqm2i', timeStamp: new Date('2019-09-01'), bodyText: 'Hi this is Dan'},
   {userName: 'dan', id: '7jMsz8ijUAE6sCQmiC80Sa', timeStamp: new Date('2019-09-02'), bodyText: 'Hi this is Steve'}
