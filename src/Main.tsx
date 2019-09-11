@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import History from './History'
 import Edit from './Edit'
 import { Message } from './types'
-import { array } from 'prop-types';
-
 
 const ws = new WebSocket('ws://127.0.0.1:4001');
 
