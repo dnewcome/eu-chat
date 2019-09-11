@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          {(userName ? <Main logoutCallback={() => {setName(null)}}></Main> :
+          {(userName ? <Main userName={userName} logoutCallback={() => {setName(null)}}></Main> :
           <Login callback={(name: string) => {console.log(`setting name to ${name}`); setName(name, {expires: 0.1})}}></Login>)}
       </header>
     </div>

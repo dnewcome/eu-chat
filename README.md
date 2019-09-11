@@ -26,3 +26,12 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Heroku
+
+
+## todo:
+fallback for avatar
+styling for login
+css library
+get logged in users
+documentation
+how to contribute

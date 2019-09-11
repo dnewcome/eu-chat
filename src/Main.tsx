@@ -1,33 +1,43 @@
 import React, {useEffect, useState} from 'react';
-import History from './History'
-import Edit from './Edit'
-import { Message } from './types'
+import sha1 from 'sha1';
+import bc from 'base-converter';
+import History from './History';
+import Edit from './Edit';
+import { Message } from './types';
 
 const ws = new WebSocket('ws://127.0.0.1:4001');
 
-const constructMessage = (bodyText: string): Message => {
-  return {userName: 'dan', id: '3vfqOjhc0wGsyEYSU6CCks', timeStamp: new Date(), bodyText};
+const constructMessage = (userName: string, bodyText: string): Message => {
+  const timeStamp = new Date();
+  const id = sha1(timeStamp.getTime() + userName + bodyText);
+  return {userName, id: bc.decTo62(bc.hexToDec(id)) , timeStamp: new Date(), bodyText};
 };
 
-
-
-function Main(props: {logoutCallback: ()=>void}) {
-  const [messages, setMessages] = useState([
-    {userName: 'dan', id: '2HUoNcA8owoomGuUyaqm2i', timeStamp: new Date('2019-09-01'), bodyText: 'Hi this is Dan'},
-    {userName: 'dan', id: '7jMsz8ijUAE6sCQmiC80Sa', timeStamp: new Date('2019-09-02'), bodyText: 'Hi this is Steve'}
-  ]);
+function Main(props: {userName: string, logoutCallback: ()=>void}) {
+  const [messages, setMessages]: [Array<Message>, Function] = useState([]);
   useEffect(() => {
-    // ws.onopen = () => {ws.send('yes');};
     ws.onmessage = (event) => {
-      setMessages([...messages, constructMessage(event.data)]); console.log(messages);
+      const {userName, bodyText} = JSON.parse(event.data);
+      console.log(event.data);
+      setMessages([...messages, constructMessage(userName, bodyText)]);
     };
   });
   return (
     <div className="App">
       <header className="App-header">
-          <History items={messages}></History> 
-          <Edit onSend={(bodyText: string)=>{ws.send(bodyText)}}></Edit> 
-          <button type="submit" onClick={props.logoutCallback}>Log out</button>
+          <History userName={props.userName} items={messages}></History> 
+          <Edit onSend={(bodyText: string)=>{
+            if(bodyText) {ws.send(JSON.stringify({userName: props.userName, bodyText}))}}
+          }></Edit> 
+          <button style={{
+      marginTop: '50px',
+      height:  '50px',
+      width: '100px',
+      borderRadius: '10px',
+      backgroundColor: '#ACF',
+      color: 'white',
+      fontSize: 'calc(10px + 1.25vmin)'
+}} type="submit" onClick={props.logoutCallback}>Log out</button>
       </header>
     </div>
   );
