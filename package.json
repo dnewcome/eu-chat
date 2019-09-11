@@ -58,12 +58,13 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
     "@babel/core": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.18",
     "babel-jest": "^24.9.0",
     "eslint": "^6.3.0",
     "husky": "^3.0.5",
+    "prettier-eslint": "^9.0.0",
     "tslint": "^5.20.0",
     "tslint-react": "^4.0.0"
   },

@@ -35,3 +35,4 @@ css library
 get logged in users
 documentation
 how to contribute
+prettier
