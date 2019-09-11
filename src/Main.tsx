@@ -21,7 +21,7 @@ function Main(props: {logoutCallback: ()=>void}) {
     ws.onmessage = (event) => {
       setMessages([...messages, constructMessage(event.data)]); console.log(messages);
     };
-  }, []);
+  });
   return (
     <div className="App">
       <header className="App-header">
