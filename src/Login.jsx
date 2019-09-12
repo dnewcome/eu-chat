@@ -37,7 +37,6 @@ function Edit(props) {
           border: "none",
           color: "white",
           borderRadius: "10px",
-          width: "100%",
           height: "50px",
           fontSize: "calc(10px + 2vmin)"
         }}

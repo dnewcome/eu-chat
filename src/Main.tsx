@@ -4,7 +4,6 @@ import bc from "base-converter";
 import History from "./History";
 import Edit from "./Edit";
 import { Message } from "./types";
-import { tsPropertySignature } from "@babel/types";
 
 const ws = new WebSocket("ws://127.0.0.1:4001");
 
