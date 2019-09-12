@@ -36,7 +36,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Contributing
 
-PRs submitted against master will be reviewed for possible release in future builds. Tests will be run automatically on pre-commit by default. It's possible to circumvent this with `-u` but please observe this constraint and fix tests before submitting a PR.
+PRs submitted against master will be reviewed for possible release in future builds. Tests will be run automatically on pre-commit by default. It's possible to circumvent this with `-n` but please observe this constraint and fix tests before submitting a PR.
 
 ## Continuous deployment
 
