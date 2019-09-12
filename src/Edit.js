@@ -21,7 +21,6 @@ function Edit(props) {
         value={bodyText}
         onChange={ev => {
           setBodyText(ev.target.value);
-          console.log(bodyText);
         }}
         name="body"
         type="text"

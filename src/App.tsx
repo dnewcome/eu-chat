@@ -20,7 +20,6 @@ function App() {
         ) : (
           <Login
             callback={(name: string) => {
-              console.log(`setting name to ${name}`);
               setName(name, { expires: 0.1 });
             }}
           ></Login>

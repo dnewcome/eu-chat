@@ -1,6 +1,6 @@
 # EarnUp chat example app.
 
-This app is intended to illustrate current Node/React development practices. React components are written using [hooks](https://reactjs.org/docs/hooks-intro.html). Contributors submitting PRs using classes will be asked to refactor their code to use hooks. 
+This app is intended to illustrate current Node/React development practices. React components are written using [hooks](https://reactjs.org/docs/hooks-intro.html). Contributors submitting PRs using classes will be asked to refactor their code to use hooks. Typescript is used to enforce types at build time. Eslint is used to enforce common ES6/Typescript coding standards. 
 
 ## Getting started
 
